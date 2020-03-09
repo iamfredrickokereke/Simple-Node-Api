@@ -1,21 +1,21 @@
 
 const express = require('express');
-const api = express();
+const app = express();
 
 
-api.use(express.json());
+app.use(express.json());
 
 
 
-api.get('/info', (req, res) => { 
+app.get('/info', (request, response) => { 
 
-    console.log(req.url);
-    console.log(req.query);
+    console.log(request.url);
+    console.log(request.query);
     res.json({
 
-        name : req.query.name,
-        job : req.query.job,
-    message : `Your name is ${req.query.name} and you are a ${req.query.job}`
+        name : request.query.name,
+        job : request.query.job,
+    message : `Your name is ${request.query.name} and you are a ${request.query.job}`
     })
 
 })

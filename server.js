@@ -18,3 +18,11 @@ api.get('/info', (req, res) => {
     })
 
 }).listen(8000);
+
+
+
+api.post('/sendInfo', (req, res) => {
+
+    console.log(req.body)
+    
+} )

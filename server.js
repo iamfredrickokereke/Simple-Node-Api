@@ -11,7 +11,7 @@ app.get('/info', (request, response) => {
 
     console.log(request.url);
     console.log(request.query);
-    res.json({
+    response.json({
 
         name : request.query.name,
         job : request.query.job,
@@ -22,14 +22,14 @@ app.get('/info', (request, response) => {
 
 
 
-api.post('/sendInfo', (req, res) => {
+api.post('/sendInfo', (request, response) => {
 
-    console.log(req.body)
+    console.log(request.body)
 
-    res.json({
-        name : req.body.name,
-        job : req.body.job,
-    message : `Your name is ${req.body.name} and you are a ${req.body.job}`
+    response.json({
+        name : request.body.name,
+        job : request.body.job,
+    message : `Your name is ${request.body.name} and you are a ${request.body.job}`
     })
     
 } )
